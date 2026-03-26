@@ -50,7 +50,7 @@ const projects = [
     name: "Listings and Solds",
     url: "https://listingsandsolds.com",
     shuttered: true,
-    screenshot: "",
+    screenshot: "/screenshots/listingsandsolds.png",
     problem:
       "Homebuyers and sellers are stuck using dumbed-down search tools on Zillow and Realtor.com while their agents have access to far more powerful MLS search behind a login. The best filters, the freshest data, the sold history: all gatekept. Consumers get lead capture forms disguised as search engines. I wanted to give the public the same tools I used every day as an agent, with nothing held back.",
     solution:
@@ -117,20 +117,32 @@ export default function Home() {
           <article key={project.name}>
             {/* Screenshot */}
             {project.screenshot ? (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block overflow-hidden rounded-lg border border-zinc-200 transition-shadow hover:shadow-lg"
-              >
-                <Image
-                  src={project.screenshot}
-                  alt={`${project.name} screenshot`}
-                  width={1200}
-                  height={675}
-                  className="w-full"
-                />
-              </a>
+              project.shuttered ? (
+                <div className="overflow-hidden rounded-lg border border-zinc-200">
+                  <Image
+                    src={project.screenshot}
+                    alt={`${project.name} screenshot`}
+                    width={1200}
+                    height={675}
+                    className="w-full"
+                  />
+                </div>
+              ) : (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block overflow-hidden rounded-lg border border-zinc-200 transition-shadow hover:shadow-lg"
+                >
+                  <Image
+                    src={project.screenshot}
+                    alt={`${project.name} screenshot`}
+                    width={1200}
+                    height={675}
+                    className="w-full"
+                  />
+                </a>
+              )
             ) : null}
 
             {/* Content */}
