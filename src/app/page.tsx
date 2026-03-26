@@ -64,7 +64,7 @@ const projects = [
   },
   {
     name: "Historical Pen Pals",
-    url: "https://historicalpenpals.com",
+    url: "https://www.historicalpenpals.com/gift",
     screenshot: "/screenshots/historicalpenpals.png",
     problem:
       "The greeting card market is a $7 disposable experience. Meanwhile, people (especially parents and history enthusiasts) are looking for something more meaningful than a screen. I saw whitespace at the intersection of physical mail, AI personalization, and storytelling. A different kind of product than anything I'd built before, which was the point.",
