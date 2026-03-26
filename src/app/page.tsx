@@ -67,11 +67,21 @@ export default function Home() {
   return (
     <main className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
       {/* Header */}
-      <header className="mb-16">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Mark Gores
-        </h1>
-        <p className="mt-1 text-lg text-zinc-500">Product Builder</p>
+      <header className="mb-16 flex items-start justify-between">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Mark Gores
+          </h1>
+          <p className="mt-1 text-lg text-zinc-500">Product Builder</p>
+        </div>
+        <a
+          href="/mark_gores_resume.pdf"
+          download
+          className="mt-1 inline-flex items-center gap-1.5 rounded-md border border-zinc-200 px-3.5 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-zinc-900"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume
+        </a>
       </header>
 
       {/* Intro */}
@@ -180,6 +190,13 @@ export default function Home() {
         <div className="flex items-center justify-between text-sm text-zinc-500">
           <span>&copy; {new Date().getFullYear()} Mark Gores</span>
           <div className="flex gap-6">
+            <a
+              href="/mark_gores_resume.pdf"
+              download
+              className="hover:text-zinc-900 transition-colors"
+            >
+              Resume
+            </a>
             <a
               href="https://www.linkedin.com/in/markgores"
               target="_blank"
