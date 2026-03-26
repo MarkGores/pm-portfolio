@@ -47,6 +47,22 @@ const projects = [
     stack: ["Next.js", "NorthstarMLS API", "Server Components", "Tailwind CSS", "SVG Data Viz", "Vercel"],
   },
   {
+    name: "Listings and Solds",
+    url: "https://listingsandsolds.com",
+    shuttered: true,
+    screenshot: "",
+    problem:
+      "Homebuyers and sellers are stuck using dumbed-down search tools on Zillow and Realtor.com while their agents have access to far more powerful MLS search behind a login. The best filters, the freshest data, the sold history: all gatekept. Consumers get lead capture forms disguised as search engines. I wanted to give the public the same tools I used every day as an agent, with nothing held back.",
+    solution:
+      "A full MLS consumer search platform with feature parity to professional agent tools, plus something no MLS search offers at any level: computer vision integration that let users search by visual property features. Want homes with white kitchen cabinets, hardwood floors, or stone countertops? Upload a photo or describe what you want and the system matched against MLS listing photos. Built on a real-time MLS data feed with no registration wall.",
+    decisions: [
+      "No login, no lead capture. Same philosophy as priorlake.realestate: trust over extraction. If the tool is good enough, people come back and eventually pick up the phone. Gatekeeping the data is the problem, not the business model.",
+      "Computer vision as the differentiator. Standard MLS search filters are keyword-based and agents barely fill them out. Visual search solved a real gap: buyers know what they want a kitchen to look like but can't describe it in dropdown menus. I built a working prototype using image classification models against MLS photo sets.",
+      "Shelved due to unit economics. The CV models worked but the cost of running inference against MLS-volume image datasets didn't scale on a solo budget. The product validated the concept but needed infrastructure investment beyond what I could justify independently. Knowing when to stop is as important as knowing what to build.",
+    ],
+    stack: ["Next.js", "AWS/S3", "Computer Vision", "NorthstarMLS API", "Vercel"],
+  },
+  {
     name: "Historical Pen Pals",
     url: "https://historicalpenpals.com",
     screenshot: "/screenshots/historicalpenpals.png",
@@ -100,33 +116,44 @@ export default function Home() {
         {projects.map((project) => (
           <article key={project.name}>
             {/* Screenshot */}
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block overflow-hidden rounded-lg border border-zinc-200 transition-shadow hover:shadow-lg"
-            >
-              <Image
-                src={project.screenshot}
-                alt={`${project.name} screenshot`}
-                width={1200}
-                height={675}
-                className="w-full"
-              />
-            </a>
+            {project.screenshot ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block overflow-hidden rounded-lg border border-zinc-200 transition-shadow hover:shadow-lg"
+              >
+                <Image
+                  src={project.screenshot}
+                  alt={`${project.name} screenshot`}
+                  width={1200}
+                  height={675}
+                  className="w-full"
+                />
+              </a>
+            ) : null}
 
             {/* Content */}
-            <div className="mt-6">
+            <div className={project.screenshot ? "mt-6" : ""}>
               <div className="flex items-baseline justify-between gap-4">
-                <h2 className="text-2xl font-semibold">{project.name}</h2>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="shrink-0 text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
-                >
-                  {project.url.replace("https://", "")} &rarr;
-                </a>
+                <h2 className="text-2xl font-semibold">
+                  {project.name}
+                  {project.shuttered && (
+                    <span className="ml-2 align-middle text-xs font-medium uppercase tracking-wide text-zinc-400">
+                      Shuttered
+                    </span>
+                  )}
+                </h2>
+                {!project.shuttered && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
+                  >
+                    {project.url.replace("https://", "")} &rarr;
+                  </a>
+                )}
               </div>
 
               <div className="mt-6 space-y-6">
