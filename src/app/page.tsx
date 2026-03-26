@@ -23,10 +23,10 @@ const projects = [
     problem:
       "Local events in Prior Lake were scattered across Facebook groups, city websites, church bulletins, and word of mouth. Residents missed things constantly. I kept hearing the same question from neighbors: 'What's happening this weekend?' There was no single answer, and after 40 years in this community, I knew the demand was real.",
     solution:
-      "A community events calendar that aggregates local happenings into one searchable hub with multiple views. Paired with a twice-weekly newsletter now reaching 800+ subscribers, delivered Monday and Friday so people can plan their weeks.",
+      "A community events calendar that aggregates local happenings into one searchable hub with multiple views. Paired with a twice-weekly newsletter now reaching 850+ subscribers, delivered Monday and Friday so people can plan their weeks.",
     decisions: [
       "WordPress over custom code. I needed to ship in days, not months. The Events Calendar plugin gave me 80% of what I needed immediately, so I could learn from real usage before investing in anything custom.",
-      "Newsletter as the core product, calendar as the engine. I tested both and open rates told the story: 55%+ consistently. Email is where this audience lives. The calendar feeds the newsletter, not the other way around.",
+      "Newsletter as the core product, calendar as the engine. I tested both and open rates told the story: 65%+ consistently. Email is where this audience lives. The calendar feeds the newsletter, not the other way around.",
       "Local business advertising as the revenue model. 800+ engaged, hyperlocal subscribers with high open rates is exactly the audience small businesses can't reach through Meta or Google. The unit economics work because the audience is narrow and high-intent.",
     ],
     stack: ["WordPress", "The Events Calendar", "MailPoet", "Meta Pixel", "Google Analytics"],
