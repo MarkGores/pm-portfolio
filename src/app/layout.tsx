@@ -8,13 +8,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mark Gores - Product Builder",
+  title: "Mark Gores - AI Product Builder",
   description:
-    "22 years in real estate. Now shipping AI-powered products for agents and local communities.",
+    "22 years in real estate. Now shipping AI products and generative media pipelines for agents and local communities.",
   openGraph: {
-    title: "Mark Gores - Product Builder",
+    title: "Mark Gores - AI Product Builder",
     description:
-      "22 years in real estate. Now shipping AI-powered products for agents and local communities.",
+      "22 years in real estate. Now shipping AI products and generative media pipelines for agents and local communities.",
     type: "website",
   },
 };
