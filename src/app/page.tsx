@@ -62,8 +62,8 @@ const projects: Project[] = [
     solution:
       "An AI-powered tool that extracts offer terms from purchase agreement PDFs and generates color-coded comparison grids with net-to-seller calculations. For buyer's agents, it assembles polished offer packages with cover letters, shareable links, and ready-to-paste emails, all in under a minute.",
     decisions: [
-      "Scoped the MVP to PDF-in, comparison-out, with no form entry. I tested the idea with 10 agents first: every one said they'd use it if it read their existing documents. That validated the core bet before writing a line of code. The AI extraction layer had to handle messy, inconsistent PDFs from dozens of brokerages, so I iterated on prompt design and parsing logic until accuracy was high enough that agents trusted the output over their own manual process.",
-      "Free early access to de-risk adoption. Agents are notoriously resistant to new tools. Rather than guess at pricing, I launched free to measure actual usage patterns and identify which features drive repeat sessions.",
+      "Scoped the MVP to PDF-in, comparison-out, with no form entry: agents already have the purchase agreements, so the tool reads those instead of asking anyone to retype terms. The AI extraction layer had to handle messy, inconsistent PDFs from dozens of brokerages, so I iterated on prompt design and parsing logic until the extracted terms reliably matched the source documents.",
+      "Estimated net to seller on every offer, not just price. The grid puts financial terms, contingencies, and the estimated net side by side, because the highest price isn't always the best offer.",
       "Built shareable comparison links so every output becomes distribution. Each comparison shared with a seller puts the product in front of the listing agent on the other side. Growth is embedded in the workflow, not bolted on.",
     ],
     stack: ["Next.js", "Anthropic API", "PDF Parsing", "Clerk Auth", "Tailwind CSS", "Vercel"],
